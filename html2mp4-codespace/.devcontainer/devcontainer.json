@@ -1,0 +1,15 @@
+{
+  "name": "html2mp4-codespace",
+  "build": { "dockerfile": "Dockerfile" },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "API", "onAutoForward": "openBrowser" }
+  },
+  "postCreateCommand": "npm ci",
+  "postStartCommand": "npm start",
+  "customizations": {
+    "vscode": {
+      "settings": { "terminal.integrated.defaultProfile.linux": "bash" }
+    }
+  }
+}
