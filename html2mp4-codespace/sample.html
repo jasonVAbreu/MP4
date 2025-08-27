@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Post Animado</title>
+<style>
+  @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @keyframes float { 0%{transform:translateY(0)} 50%{transform:translateY(-8px)} 100%{transform:translateY(0)} }
+  :root{ --bg:#0f172a; --ink:#e2e8f0; --brand:#38bdf8; }
+  html,body{ height:100%; margin:0; }
+  .canvas{ width:1080px;height:1080px;margin:0 auto;background:linear-gradient(135deg,#0f172a,#111827);
+    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-family:system-ui,Segoe UI,Roboto; }
+  .glow{ position:absolute; width:600px; height:600px; background:radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 60%); filter: blur(40px); animation: float 6s ease-in-out infinite; }
+  .card{ width:860px; height:540px; border-radius:24px; background:rgba(255,255,255,.05); backdrop-filter: blur(6px);
+    border:1px solid rgba(255,255,255,.12); box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    display:grid; grid-template-columns: 1.2fr 1fr; overflow:hidden; animation: slideUp .8s ease forwards; }
+  .left{ position:relative; overflow:hidden; }
+  .left img{ width:100%; height:100%; object-fit:cover; transform: scale(1.04); }
+  .badge{ position:absolute; top:16px; left:16px; padding:8px 12px; background:rgba(56,189,248,.9); color:#001018; font-weight:700; border-radius:999px; letter-spacing:.4px; }
+  .right{ padding:32px; color:var(--ink); display:flex; flex-direction:column; gap:16px; }
+  h1{ margin:0; font-size:48px; line-height:1.05; letter-spacing:-.02em; }
+  p{ margin:0; color:#cbd5e1; font-size:20px; }
+  .cta{ margin-top:auto; display:inline-flex; align-items:center; gap:12px; padding:14px 18px; border-radius:14px;
+    background:linear-gradient(90deg, var(--brand), #60a5fa); color:#031321; font-weight:800; letter-spacing:.3px; }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow"></div>
+    <div class="card">
+      <div class="left">
+        <span class="badge">NUEVO</span>
+        <img src="https://images.unsplash.com/photo-1520975673312-23e9f4c9a4b1?q=80&w=1200&auto=format&fit=crop" alt="">
+      </div>
+      <div class="right">
+        <h1>Fisioterapia Integral</h1>
+        <p>Recupera tu movilidad con planes personalizados y técnicas avanzadas.</p>
+        <a class="cta" href="#">Agenda tu evaluación</a>
+      </div>
+    </div>
+  </div>
+  <script>window.readyToRecord = true;</script>
+</body>
+</html>
